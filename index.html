@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#004c3f;--green2:#008060;--lime:#aee63f;--ink:#1a1a1a;--paper:#f6f5f1;--card:#ffffff;--mut:#6f6f6a;--line:#e3e1da}
+:root{--green:#004c3f;--green2:#008060;--mint:#6fc992;--lime:#aee63f;--ink:#1a1a1a;--paper:#eeece2;--card:#ffffff;--mut:#6f6f6a;--line:#ddd9c9}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);overflow-x:clip}
@@ -18,7 +18,7 @@ button{font-family:inherit;cursor:pointer}
 ::selection{background:var(--green);color:#fff}
 #sprog{position:fixed;top:0;left:0;height:3px;background:var(--green2);width:0;z-index:300}
 /* nav */
-header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.95rem clamp(1rem,4vw,2.4rem);background:rgba(246,245,241,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.95rem clamp(1rem,4vw,2.4rem);background:rgba(238,236,226,.87);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .logo{font-family:'Archivo';font-weight:900;font-size:1.15rem;letter-spacing:.02em;color:var(--green);text-decoration:none}
 .logo span{color:var(--ink)}
 header nav{display:flex;gap:1.5rem}
@@ -27,6 +27,53 @@ header nav a.on{color:var(--green2);border-bottom:2px solid var(--green2);paddin
 #cartBtn{background:var(--green);color:#fff;border:none;border-radius:999px;padding:.55rem 1.1rem;font-weight:700;font-size:.8rem;letter-spacing:.06em}
 #cartBtn b{background:var(--lime);color:var(--green);border-radius:50%;padding:.05rem .42rem;margin-left:.35rem}
 @media(max-width:680px){header nav{display:none}}
+/* homepage hero (Entrepreneur Collection) */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.4rem,4vw,3.5rem);align-items:center;padding:7.6rem clamp(1rem,4vw,2.4rem) 3.4rem;max-width:1400px;margin:0 auto}
+.hero .kick{color:var(--green2);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem}
+.hero h2{font-size:clamp(2.3rem,5.6vw,4.4rem);font-weight:900;line-height:1.02;margin:.8rem 0 1.1rem}
+.hero h2 em{font-style:normal;color:var(--green2)}
+.hero p{color:var(--mut);line-height:1.65;max-width:46ch;font-size:1.05rem}
+.hero .cta{display:flex;gap:.7rem;margin-top:1.8rem;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--green);color:#fff;border:none;padding:1rem 1.9rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.83rem;border-radius:999px;text-decoration:none;transition:.3s}
+.btn:hover{background:var(--green2);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--green);border:2px solid var(--green)}
+.btn.ghost:hover{background:var(--green);color:#fff}
+.hero .fig{border-radius:24px;overflow:hidden;box-shadow:0 34px 64px rgba(0,40,32,.20);will-change:transform}
+.hero .fig img{width:100%;height:min(64svh,600px);object-fit:cover}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:6.4rem}.hero .fig img{height:52svh}}
+/* spotlight + manifesto */
+.spot{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(1.4rem,4vw,3.5rem);align-items:center;max-width:1400px;margin:0 auto}
+.spot .fig{border-radius:24px;overflow:hidden;box-shadow:0 28px 54px rgba(0,40,32,.16)}
+.spot .fig img{width:100%;height:min(56svh,520px);object-fit:cover}
+.spot h2{font-size:clamp(1.9rem,4.4vw,3.2rem);font-weight:900;line-height:1.05}
+.spot p{color:var(--mut);line-height:1.7;margin-top:1rem;max-width:48ch}
+.spot .names{margin-top:1.1rem;font-size:.86rem;color:var(--ink);line-height:1.7}
+@media(max-width:860px){.spot{grid-template-columns:1fr}}
+.manifesto{text-align:center;padding:clamp(3.4rem,8vw,6rem) 1rem}
+.manifesto div{font-family:'Archivo';font-weight:800;font-size:clamp(1.5rem,4.4vw,3.1rem);line-height:1.25;text-transform:uppercase}
+.manifesto div span{color:var(--green2)}
+/* collections tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.2rem}
+@media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.tiles{grid-template-columns:1fr}}
+.tile{position:relative;border-radius:20px;overflow:hidden;height:320px;text-decoration:none;display:block}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.07)}
+.tile .cap{position:absolute;left:1rem;bottom:1rem;background:rgba(238,236,226,.94);color:var(--green);font-family:'Archivo';font-weight:800;padding:.6rem 1rem;border-radius:99px;font-size:.9rem}
+.tile .cap small{display:block;font-family:'Inter';font-weight:600;color:var(--mut);font-size:.72rem;letter-spacing:.06em}
+/* newsletter */
+.news{background:var(--green);color:#fff;text-align:center}
+.news h2{color:#fff!important}
+.news p{color:#bfe3cf;margin:0 auto;max-width:44ch;line-height:1.6}
+.news form{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
+.news input{padding:1rem 1.3rem;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;min-width:min(320px,82vw);font-size:1rem}
+.news input::placeholder{color:#9fc9ae}
+.news .ok{color:var(--mint);font-weight:600;margin-top:1rem;display:none}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:1.4rem;width:100%}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer h4{font-family:'Archivo';color:var(--ink);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem}
+footer a{color:var(--mut);text-decoration:none;display:block;margin:.35rem 0}
+footer a:hover{color:var(--green2)}
 /* rotating phrase (as on the original) */
 .phrases{padding:6.2rem 1rem 0;text-align:center;height:8.2rem;position:relative}
 .phrases div{position:absolute;left:0;right:0;opacity:0;transform:translateY(14px);transition:.6s;font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.06em}
@@ -44,8 +91,12 @@ header nav a.on{color:var(--green2);border-bottom:2px solid var(--green2);paddin
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 /* 3D shop — pinned horizontal world */
 #world{height:420vh;position:relative}
-#stage{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(1100px 550px at 50% 108%,#dfe9e2 0%,var(--paper) 62%);perspective:1100px}
+#stage{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(900px 480px at 78% 30%,rgba(111,201,146,.38),rgba(111,201,146,0) 62%),radial-gradient(800px 460px at 12% 78%,rgba(111,201,146,.22),rgba(111,201,146,0) 60%),var(--paper);perspective:1100px}
 #floor{position:absolute;left:-10%;right:-10%;bottom:-14%;height:34%;background:linear-gradient(180deg,rgba(0,76,63,.10),rgba(0,76,63,.02));transform:rotateX(62deg);transform-origin:bottom;border-top:2px solid rgba(0,76,63,.15)}
+.shader{flex:none;width:min(58vw,260px);height:min(46vw,300px);border-radius:18px;box-shadow:0 24px 44px rgba(0,40,32,.20);will-change:transform}
+.shader.s1{background:radial-gradient(120% 90% at 50% 45%,#1e5b3a 0%,#12291c 55%,#0d0f0c 100%)}
+.shader.s2{background:radial-gradient(110% 90% at 50% 40%,#94b4a5 0%,#3d4a42 42%,#11110f 88%)}
+.shader.s3{background:radial-gradient(120% 100% at 50% 50%,#2c3524 0%,#1e2418 55%,#101208 100%)}
 #track{position:absolute;top:50%;left:0;display:flex;gap:clamp(1.6rem,4vw,3.4rem);align-items:center;width:max-content;padding:0 8vw;will-change:transform;transform-style:preserve-3d}
 .pitem{flex:none;width:min(66vw,300px);cursor:pointer;will-change:transform}
 .pitem .fr{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 30px 50px rgba(0,40,32,.18);border:1px solid var(--line)}
@@ -130,7 +181,50 @@ footer{padding:2rem clamp(1rem,4vw,2.4rem);border-top:1px solid var(--line);colo
   <button id="cartBtn">BAG <b id="cartCount">0</b></button>
 </header>
 
-<div class="phrases" id="phrases">
+<!-- HOMEPAGE HERO -->
+<section class="hero">
+  <div>
+    <div class="kick rv">The Entrepreneur Collection</div>
+    <h2 class="rv">Open for business.<br>Dress like you <em>answer to no one</em> — except yourself.</h2>
+    <p class="rv">The Entrepreneur Collection is open for business. Heavyweight cuts, honest fabrics and prints with something to say — a daily uniform for people building their own thing.</p>
+    <div class="cta rv"><a class="btn" href="#world">Shop now</a><a class="btn ghost" href="#collections">Explore collection</a></div>
+  </div>
+  <div class="fig rv" id="heroFig"><img src="img/hoodie.jpg" alt="Entrepreneur Collection — heavyweight hoodie"></div>
+</section>
+
+<!-- SPOTLIGHT -->
+<section class="sec" style="padding-top:1rem">
+  <div class="spot">
+    <div class="fig rv"><img src="img/crew.jpg" alt="Founders wearing the collection"></div>
+    <div>
+      <h2 class="rv">Real people,<br>real businesses</h2>
+      <p class="rv">The Entrepreneur Collection is worn by six founders and entrepreneurs who bet on themselves to build something beautiful.</p>
+      <p class="names rv">From left to right: Dylan Kwacz · Leandro Baldassarre · Nicole Kim · Owen Walker · Sarra Tang · Jenn Harper</p>
+      <div class="cta rv" style="margin-top:1.4rem"><a class="btn" href="#list">Shop now</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="rv">A new daily uniform for</div>
+  <div class="rv">the <span>builders, doers and dreamers</span> turning</div>
+  <div class="rv">what if into <span>what's next.</span></div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="sec" id="collections" style="padding-top:1rem">
+  <div class="kick rv" style="color:var(--green2);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem">Collections</div>
+  <h2 class="rv">Stock up on your Supply</h2>
+  <div class="tiles">
+    <a class="tile rv" href="#list"><img src="img/crew.jpg" alt="Best Sellers"><span class="cap">Best Sellers<small>The pieces everyone reorders</small></span></a>
+    <a class="tile rv" href="#collections"><img src="img/hoodie.jpg" alt="Entrepreneur Collection"><span class="cap">Entrepreneur<small>Open for business</small></span></a>
+    <a class="tile rv" href="#world"><img src="img/zip.jpg" alt="Performance Pack"><span class="cap">Performance Pack<small>High-performance merch</small></span></a>
+    <a class="tile rv" href="#list"><img src="img/green.jpg" alt="Shopify Exclusives"><span class="cap">Exclusives<small>Only here, only once</small></span></a>
+  </div>
+</section>
+
+<div class="phrases" id="phrases" style="padding-top:2.4rem">
   <div class="big show">Apparel Collection</div>
   <div class="big alt">High-performance merch built for builders</div>
   <div class="big">Shopify Supply</div>
@@ -156,14 +250,34 @@ footer{padding:2rem clamp(1rem,4vw,2.4rem);border-top:1px solid var(--line);colo
 
 <!-- SHOP LIST -->
 <section class="sec" id="list">
-  <h2 class="rv">Shop the pack</h2>
+  <div class="kick rv" style="color:var(--green2);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem">Selling fast</div>
+  <h2 class="rv">Shop these popular picks</h2>
   <p class="rv" style="color:var(--mut);margin-top:.6rem;max-width:52ch;line-height:1.6">All nine pieces from the Performance Pack drop — the same products, in a classic list.</p>
   <div class="grid" id="grid"></div>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="sec news">
+  <h2 class="rv">Get the drop first</h2>
+  <p class="rv" style="margin-top:.8rem">New collections, restocks and exclusives — straight to your inbox, before they sell out.</p>
+  <form id="nlForm" class="rv" novalidate>
+    <input type="email" id="nlMail" placeholder="your@email.com" aria-label="Email">
+    <button class="btn" type="submit" style="background:var(--lime);color:var(--green)">Sign up</button>
+  </form>
+  <div class="ok" id="nlOk">You're on the list — welcome to the Supply.</div>
+</section>
+
 <footer>
-  <span><strong style="color:var(--ink)">Performance Pack — Apparel Collection.</strong> High-performance merch built for builders.</span>
-  <span>Template clone for editing: swap in your own brand, photos and products before commercial use.</span>
+  <div class="cols">
+    <div>
+      <h4>Shopify Supply</h4>
+      <p style="line-height:1.6;max-width:34ch">High-performance merch built for builders, doers and dreamers. Performance Pack — Apparel Collection.</p>
+    </div>
+    <div><h4>Shop</h4><a href="#list">Shop All</a><a href="#list">Best Sellers</a><a href="#world">Performance Pack</a><a href="#collections">Exclusives</a></div>
+    <div><h4>Help</h4><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Size guide</a><a href="#">Contact us</a></div>
+    <div><h4>Company</h4><a href="#">About</a><a href="#">Entrepreneurs</a><a href="#">Careers</a><a href="#">Press</a></div>
+  </div>
+  <span style="width:100%;border-top:1px solid var(--line);padding-top:1rem">Template clone for editing: swap in your own brand, photos and products before commercial use.</span>
 </footer>
 
 <div id="dscrim"></div>
@@ -202,15 +316,17 @@ document.getElementById('marqTr').innerHTML=('<span>Performance Pack</span><i>�
 /* ---------- 3D shop track: products interleaved with lifestyle shots, like the original ---------- */
 const SEQ=[
  {t:'p',p:PRODUCTS[0]},{t:'l',img:'img/hoodie.jpg',alt:'On the move'},
- {t:'p',p:PRODUCTS[1]},{t:'p',p:PRODUCTS[2]},
+ {t:'p',p:PRODUCTS[1]},{t:'s',cls:'s2'},
+ {t:'p',p:PRODUCTS[2]},
  {t:'l',img:'img/bag.jpg',alt:'Carry it all'},
- {t:'p',p:PRODUCTS[3]},{t:'p',p:PRODUCTS[4]},{t:'p',p:PRODUCTS[5]},
+ {t:'p',p:PRODUCTS[3]},{t:'s',cls:'s1'},{t:'p',p:PRODUCTS[4]},{t:'p',p:PRODUCTS[5]},
  {t:'l',img:'img/crew.jpg',alt:'Daily uniform'},
- {t:'p',p:PRODUCTS[6]},{t:'p',p:PRODUCTS[7]},{t:'p',p:PRODUCTS[8]},
+ {t:'p',p:PRODUCTS[6]},{t:'p',p:PRODUCTS[7]},{t:'s',cls:'s3'},{t:'p',p:PRODUCTS[8]},
 ];
 const track=document.getElementById('track');
 track.innerHTML=SEQ.map((s,i)=> s.t==='p'
  ? `<article class="pitem" data-open="${s.p.id}" style="margin-top:${i%3===0?-46:i%3===1?30:0}px"><div class="fr"><img src="${s.p.img}" ${s.p.filt?`style="filter:${s.p.filt}"`:''} alt="${s.p.name}"></div><div class="lb"><h3>${s.p.name}</h3><span class="pr">${money(s.p.price)}</span></div><div class="note">${s.p.note}</div></article>`
+ : s.t==='s' ? `<figure class="shader ${s.cls}" style="margin-top:${i%2?40:-26}px"></figure>`
  : `<figure class="litem" style="margin-top:${i%2?44:-30}px"><img src="${s.img}" alt="${s.alt}"></figure>`).join('');
 /* ---------- grid list ---------- */
 document.getElementById('grid').innerHTML=PRODUCTS.map(p=>`<article class="gcard rv"><img src="${p.img}" ${p.filt?`style="filter:${p.filt}"`:''} alt="${p.name}"><div class="in"><h3>${p.name}</h3><div class="note">${p.note}</div><div class="row"><span class="pr">${money(p.price)}</span><button class="add" data-open="${p.id}">View + Add</button></div></div></article>`).join('');
@@ -255,6 +371,13 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart()}});
 /* ---------- reveals ---------- */
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* newsletter */
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();const v=document.getElementById('nlMail').value;
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){document.getElementById('nlMail').style.borderColor='#e5484d';return}
+  document.getElementById('nlOk').style.display='block';e.target.reset()});
+/* hero figure gentle parallax */
+const heroFig=document.getElementById('heroFig');
+addEventListener('scroll',()=>{if(heroFig&&scrollY<innerHeight*1.2)heroFig.style.transform=`translateY(${scrollY*.06}px)`},{passive:true});
 /* ---------- rAF: lerped horizontal world with 3D depth per item ---------- */
 const world=document.getElementById('world'),stageBar=document.getElementById('stageBar'),sprog=document.getElementById('sprog');
 const items=[...track.children].map(el=>({el,cur:0}));
